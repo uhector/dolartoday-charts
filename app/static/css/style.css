@@ -1,0 +1,346 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 1.3rem;
+}
+
+.primary-color {
+    background: #2ec4b6;
+}
+
+/*------------------- HEADER / NAVBAR -------------------*/
+
+.container {
+    width: 85%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 2rem 0;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0px -32px 32px 23px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -32px 32px 23px rgba(0,0,0,0.75);
+    box-shadow: 0px -32px 32px 23px rgba(0,0,0,0.75);
+}
+
+    .header a {
+        color: #2ec4b6;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+.nav-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1{
+    color: #2ec4b6;
+    font-size: 1.7rem;
+}
+
+.menu-button {
+    display: none;
+    color: #2ec4b6;
+    border: 2px solid #2ec4b6;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.1s linear;
+}
+
+    .menu-button:hover {
+        background: #2ec4b6;
+        color: white;
+    }
+
+.menu-button.activate {
+    background: #2ec4b6;
+    color: white;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .navigation ul li {
+        display: inline-block;
+    }
+
+        .navigation ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            transition: all 0.1s linear;
+        }
+
+            .navigation ul li a:hover {
+                background: #2ec4b6;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .navigation ul li a.active {
+                background: #2ec4b6;
+                color: white;
+                border-radius: 5px;
+            }
+
+/*------------------- CARDS -------------------*/
+
+.login-card {
+    width: 320px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 40px 30px;
+}
+
+    .login-card h1 {
+        color: #2ec4b6;
+        margin: 0;
+        padding: 0 0 20px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .login-card label {
+        color: #2ec4b6;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .login-card input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .login-card input[type='text'],
+    .login-card input[type='password'] {
+        border: none;
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+        outline: none;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .login-card input[type='submit'] {
+        border: none;
+        outline: none;
+        height: 40px;
+        color: #2ec4b6;
+        transition: all 0.1s linear;
+        border-radius: 5px;
+    }
+
+        .login-card input[type='submit']:hover {
+            height: 40px;
+            color: white;
+            background: #2ec4b6;
+            border-radius: 5px;
+        }
+
+/* FLASH MESSAGES */
+
+/* The alert message box */
+
+.alert-success {
+    padding: 20px;
+    background-color: #2ec4b6;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-error {
+    padding: 20px;
+    background-color: #e71d36;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-warnig {
+    padding: 20px;
+    background-color: #ff9f1c;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-info {
+    padding: 20px;
+    background-color: #011627;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+/* When moving the mouse over the close button */
+    .closebtn:hover {
+        color: black;
+    }
+
+
+.query-form-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .query-form-container label {
+        color: #2ec4b6;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .query-form-container select {
+        margin-right: 10px;
+        padding: 0;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .query-form-container input[type='submit'] {
+        padding: 5px;
+        margin-left: 10px;
+        border: none;
+        outline: none;
+        height: 40px;
+        color: #2ec4b6;
+        transition: all 0.1s linear;
+        border-radius: 5px;
+    }
+
+        .query-form-container input[type='submit']:hover {
+            height: 40px;
+            color: white;
+            background: #2ec4b6;
+            border-radius: 5px;
+        }
+
+.footer {
+    background: #eee;
+    padding-top: 1rem;
+    height: 200px;
+    margin-top: 6rem;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0px -10px 10px #eee;
+}
+
+    .footer div.separator {
+        border:none;
+        height: 20px;
+        width: 5%;
+        height: 50px;
+        margin-top: 0;
+        border-bottom: 1px solid #1f1209;
+        box-shadow: 0 10px 20px -20px #333;
+        margin: -50px auto 10px; 
+    }
+
+    .footer p a {
+        text-decoration: none;
+        color: #929292;
+    }
+
+@media only screen and (max-width: 816px) {
+
+    .menu-button {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+
+        .navigation ul {
+            display: none;
+        }
+
+        .navigation ul.show {
+            display: block;
+        }
+
+        .navigation ul li {
+            display: block;
+            margin-top: 1rem;
+            align-content: center;
+            text-align: center;
+        }
+
+            .navigation ul li a {
+                display: block;
+                padding: 0.5rem 0;
+            }
+
+                .navigation ul li a:hover {
+                    background: #2ec4b6;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+                .navigation ul li a.active {
+                    background: #2ec4b6;
+                    color: white;
+                    border-radius: 5px;
+                }
+
+            .query-form-container {
+                text-align: center;
+                display: block;
+            }
+
+            .query-form-container label {
+                display: block;
+            }
+
+            .query-form-container select {
+                display: block;
+                margin: auto;
+            }
+}
+
+.paragraph {
+    justify-content: center;
+    padding: 1.5rem;
+}

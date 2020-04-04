@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <script src="../static/js/Chart.js"></script>
+        {% if title %}
+            <title>{{ title }} - Dolartoday Charts</title>
+        {% else %}
+            <title>Dolartoday Charts</title>
+        {% endif %}
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="nav-container">
+                <a href="/home" class="logo"><h1>Dolartoday+Charts</h1></a>
+                <span id="menu-button" class="menu-button">Ver menú</span>
+                <nav class="navigation">
+                    {% if g.current_user and g.admin %}
+                        <ul id="menu-items">
+                            {% if title == 'Inicio' %}
+                                <li><a class="active" href="/home">Inicio</a></li>
+                                <li><a href="/about">Acerca de</a></li>
+                                <li><a href="/admin">Admin Panel</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            {% elif title == 'Acerca de' %}
+                                <li><a href="/home">Inicio</a></li>
+                                <li><a class="active" href="/about">Acerca de</a></li>
+                                <li><a href="/admin">Admin Panel</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            {% elif title == 'Admin Panel' %}
+                                <li><a href="/home">Inicio</a></li>
+                                <li><a href="/about">Acerca de</a></li>
+                                <li><a class="active" href="/admin">Admin Panel</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            {% else %}
+                                <li><a href="/home">Inicio</a></li>
+                                <li><a href="/about">Acerca de</a></li>
+                                <li><a href="/admin">Admin Panel</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                    {% else %}
+                        <ul id="menu-items">
+                            {% if title == 'Inicio' %}
+                                <li><a class="active" href="/home">Inicio</a></li>
+                                <li><a href="#">Acerca de</a></li>
+                            {% elif title == 'Acerca de' %}
+                                <li><a href="/home">Inicio</a></li>
+                                <li><a class="active" href="#">Acerca de</a></li>
+                            {% else %}
+                                <li><a href="/home">Inicio</a></li>
+                                <li><a href="#">Acerca de</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="container">
+                    {% for categoy, message in messages %}
+                    <div class="alert-{{ categoy }}">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{ message }}
+                    </div> 
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <main class="container">
+            {% block content %}{% endblock content %}
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="https://github.com/ulacioh" target="_blank"><img src="../static/img/github.ico" alt="GitHub"><br/>ulacioh</a></p>
+                <div class="separator"></div>
+                {% if not g.current_user %}
+                    <p><a href="/login">Log In</a></p>
+                {% endif %}
+            </div>
+        </footer>
+
+        <script src="../static/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+    <h1>Admin Panel</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="/admin/upload">Upload</a>
+            </li>
+            <li>
+                <a href="/admin/update">Update</a>
+            </li>
+        </ul>
+
+    <h1>Upload</h1>
+
+    <form method="POST" action="/admin/upload" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% endblock content %}

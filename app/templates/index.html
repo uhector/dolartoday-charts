@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+        <div class="query-form-container">
+            <form method="GET" action="/home">
+                
+                <label>Seleccionar año:</label>
+                <select name="year">
+                    <option value="2010">2010</option> 
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020" selected>2020</option>
+                </select>
+
+                <label>Seleccionar mes:</label>
+                <select name="month">
+                    <option value="all">Todos</option>
+                    <option value="01">Enero</option> 
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+                <input type="submit" value="Consultar">
+            </form>
+        </div>
+
+        <canvas id="myChart" width="400" height="200"></canvas>
+
+        <script>
+            
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: {{ dates | safe }},
+                    datasets: [{
+                        label: 'Precio (Bs.S)',
+                        data: {{ prices }},
+                        backgroundColor: 'rgba(46, 196, 182, 0.2)',
+                        borderColor: 'rgba(46, 196, 182, 1)',
+                        borderWidth: 1,
+                        radius: 1,
+                        pointHoverRadius: 10,
+                        lineTension: 0.1,
+                        pointHoverBorderColor: 'rgba(255, 255, 255, 1)'
+                    }]
+                },
+                options: {
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    hover: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+        </script>
+
+    {% endblock content %}
